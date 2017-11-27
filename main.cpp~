@@ -1,0 +1,20 @@
+#include <iostream>
+#include <random>
+#include <bitset>
+#include "rbm.h"
+
+
+int main(){
+  srand(time(NULL));
+  
+  RBM ex(10, 10);
+  ex.printState();
+  cout << "NRG: " << ex.getEnergy() << endl << endl;
+  ex.updateHidden();
+  ex.printState();
+  cout << "NRG: " << ex.getEnergy() << endl << endl;
+  ex.updateVisible();
+  ex.printState();
+  cout << "NRG: " << ex.getEnergy() << endl << endl;
+  
+}
