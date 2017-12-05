@@ -93,21 +93,21 @@ void RBM::updateHidden(){
     float denom = nume + exp(-1*getFieldHidden(j));
 
     float threshold = nume/denom;
-    cout << endl << "index: " << j << "===================" << endl;
-    cout << "probUp: " << threshold << endl;
+    //cout << endl << "index: " << j << "===================" << endl;
+    //cout << "probUp: " << threshold << endl;
     float prob = ((float) rand()/ (RAND_MAX));
-    cout << "roll: " << prob << endl;
+    //cout << "roll: " << prob << endl;
     if(prob < threshold) hiddens[j] = 1;
     else hiddens[j] = -1;
     
-    cout << RBM::toString(hiddens) << endl;
+    //cout << RBM::toString(hiddens) << endl;
   }
 }
 
 void RBM::updateVisible(){
   for(int i = 0; i < visibles.size(); i++){
-    float nume = exp(getFieldVisible(i) * visibles[i]);
-    float denom = nume + exp(-1*getFieldVisible(i) * visibles[i]);
+    float nume = exp(getFieldVisible(i));
+    float denom = nume + exp(-1*getFieldVisible(i));
 
     float threshold = nume/denom;
 
