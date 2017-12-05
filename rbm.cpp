@@ -89,8 +89,8 @@ float RBM::getFieldVisible(int visibleIdx){
 
 void RBM::updateHidden(){
   for(int j = 0; j < hiddens.size(); j++){
-    float nume = exp(getFieldHidden(j) * hiddens[j]);
-    float denom = nume + exp(-1*getFieldHidden(j) * hiddens[j]);
+    float nume = exp(getFieldHidden(j));
+    float denom = nume + exp(-1*getFieldHidden(j));
 
     float threshold = nume/denom;
     cout << endl << "index: " << j << "===================" << endl;

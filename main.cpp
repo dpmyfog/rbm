@@ -46,11 +46,17 @@ void testDistribution(){
     it->second = probability;
   }
 
+  
+  theoretical["01"] = theoretical["00"] * theoretical["11"];
+  theoretical["10"] = theoretical["01"];
+  theoretical["00"] = theoretical["00"]*theoretical["00"];
+  theoretical["11"] = theoretical["11"]*theoretical["11"];
+  
   cout << endl << endl << "THEORETICAL" << endl;
   for(auto it = theoretical.begin(); it != theoretical.end(); it++){
-    it->second;
     cout << "State: " << it->first << "  Prob: " << it->second << endl;
   }
+  
   
   
   
